@@ -1,0 +1,186 @@
+@import "reset.css";
+@import "fontawesome.min.css";
+@import "bootstrap-grid.min.css";
+@import "fonts.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+$desClrLight: #ffaa01;
+$desClrDark: #002c42;
+$btnText: #fff;
+
+$fontSize: 10px;
+
+
+$fontH1: 6rem;
+$fontH3: 3.6rem;
+
+$fontSizeOne: 1.4rem;
+$fontSizeTwo: 1.6rem;
+$fontSizeThree: 1.8rem;
+$fontSizeFour: 2.2rem;
+$fontSizeFive: 2.4rem;
+$fontSizeSix: 3rem;
+
+$ffMain: 'Barlow Condensed', sans-serif;
+
+$sectionPadding: 110px;
+$headerPadding: 50px;
+
+$mainHeadClr: #666666;
+$mainFontClr: #555555;
+
+$bgMain: #fff;
+$bgExtra: #f3f3f3;
+
+:root {
+  font-size: $fontSize;
+}
+
+body {
+  font-family: $ffMain;
+  font-size: $fontSizeTwo;
+  font-weight: 400;
+  background-color: $bgMain;
+  line-height: 1.6;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a,
+span,
+input,
+i {
+  display: inline-flex;
+  color: inherit;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.flex-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  color: #fff;
+  background:  linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1));
+}
+
+.header-contacts {
+  display: flex;
+  justify-content: space-between;
+    li {
+      padding: 1.6rem 0;
+      position: relative;
+      &:not(:first-child) {
+        border-left: 1px solid #263f4b;
+        padding-left: 7.5rem;
+        margin-left: 7.5rem;
+      }
+      &:first-child::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 999999px;
+        background-color: #263f4b;
+      }
+      a {
+        align-items: center;
+        i {
+          margin-right: 1rem;
+          color: $desClrLight;
+          font-size: 2rem;
+        }
+      }
+    }
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo-description {
+    line-height: 1;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+      font-size: $fontSizeSix;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  color: #fff;
+  font-size: $fontSizeThree;
+  text-transform: uppercase;
+  & > li {
+    position: relative;
+    padding: 6rem 0;
+    .navbar-sub-menu {
+      transition: .3s ease-in;
+      width: 220px;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      text-transform: capitalize;
+      background-color: $desClrDark;
+      li:not(:last-child){
+        border-bottom: 1px solid #666;
+      }
+      a {
+        width: 100%;
+        padding: 1.2rem 3rem;
+        &:hover {
+          background-color: #f3f3f3;
+          color: $desClrDark;
+        }
+      }
+    }
+    a{
+      transition: .2s ease-in;
+    }
+    &:hover > a {
+      color: $desClrLight;
+    }
+    &:hover .navbar-sub-menu,
+    &:focus-within .navbar-sub-menu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.hero {
+  background:
+          linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+          url('../img/hero-bg-alt.jpg') no-repeat bottom/cover;
+  height: 700px;
+}
+
