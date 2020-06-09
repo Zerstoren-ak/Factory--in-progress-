@@ -1,15 +1,12 @@
 import Swiper from 'swiper';
 import 'swiper/css/swiper.css';
-import * as SliderSettings from './swiper-settings';
+import {carouselSettings} from './swiper-settings';
 import '@/css/styles.scss';
 import logo from '@/img/logo.png';
-// import '@/css/scss.scss';
 
 
 //// Swiper set & initialization + import all test (* as)
-// const Slider = document.getElementById(`slider`);
-// SliderSettings.addSliderClasses(Slider, `container-polygon`, `swiper-slide`);
-// const sw = new Swiper('.swiper-container', SliderSettings.SWSettings);
+// const swiper = new Swiper ('.swiper-container', carouselSettings);
 ////
 
 ///jQuery test
@@ -22,3 +19,20 @@ import logo from '@/img/logo.png';
 // testFunction();
 ////
 
+const swiper = new Swiper('.swiper-hero', carouselSettings);
+
+const navBar = document.getElementById(`navbar`);
+const header = document.getElementById(`header`);
+
+window.addEventListener(`scroll`, function () {
+    if(window.pageYOffset > header.offsetTop) {
+        navBar.classList.add(`navbar-fixed`);
+    } else {
+        navBar.classList.remove(`navbar-fixed`);
+    }
+    if(window.pageYOffset > (header.offsetTop + 10)) {
+        navBar.classList.add(`animated`);
+    } else {
+        navBar.classList.remove(`animated`);
+    }
+});

@@ -1,16 +1,19 @@
-// export const SWSettings = {
-//     direction: 'horizontal',
-//     loop: true,
-//     navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//     },
-// };
-// export {addSliderClasses};
-//
-// function addSliderClasses(node, static_class, special_class) {
-//     let slides = node.querySelectorAll(`.${static_class}`);
-//     slides.forEach(e=>{
-//         e.classList.add(special_class);
-//     })
-// }
+export const carouselSettings = {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    speed: 1200,
+    slidesPerView: 1,
+    effect: 'fade',
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+};

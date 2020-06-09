@@ -35,6 +35,12 @@ $mainFontClr: #555555;
 $bgMain: #fff;
 $bgExtra: #f3f3f3;
 
+@mixin section-header {
+  color: $desClrDark;
+  font-size: 6rem;
+  font-weight: 600;
+}
+
 :root {
   font-size: $fontSize;
 }
@@ -78,11 +84,24 @@ i {
   z-index: 100;
   color: #fff;
   background:  linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1));
+  .decoration {
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 .header-contacts {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 99999px;
+    background-color: #263f4b;
+  }
     li {
       padding: 1.6rem 0;
       position: relative;
@@ -90,14 +109,6 @@ i {
         border-left: 1px solid #263f4b;
         padding-left: 7.5rem;
         margin-left: 7.5rem;
-      }
-      &:first-child::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        height: 1px;
-        width: 999999px;
-        background-color: #263f4b;
       }
       a {
         align-items: center;
@@ -111,22 +122,33 @@ i {
 }
 
 .header-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .logo-description {
-    line-height: 1;
-    margin-left: 1rem;
+  transition: all .7s;
+  .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    h2 {
-      font-size: $fontSizeSix;
-      font-weight: 600;
-    }
-    p {
-      font-size: 1rem;
-      color: #666;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-description {
+      line-height: 1;
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        transition: .2s ease-in;
+        font-size: $fontSizeSix;
+        font-weight: 600;
+      }
+
+      &:hover > h2 {
+        color: $desClrLight;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+      }
     }
   }
 }
@@ -138,9 +160,15 @@ i {
   color: #fff;
   font-size: $fontSizeThree;
   text-transform: uppercase;
+  a{
+    transition: .2s ease-in;
+  }
   & > li {
     position: relative;
     padding: 6rem 0;
+    &:hover > a{
+      color: $desClrLight;
+    }
     .navbar-sub-menu {
       transition: .3s ease-in;
       width: 220px;
@@ -157,17 +185,12 @@ i {
       a {
         width: 100%;
         padding: 1.2rem 3rem;
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: #f3f3f3;
           color: $desClrDark;
         }
       }
-    }
-    a{
-      transition: .2s ease-in;
-    }
-    &:hover > a {
-      color: $desClrLight;
     }
     &:hover .navbar-sub-menu,
     &:focus-within .navbar-sub-menu {
@@ -177,10 +200,32 @@ i {
   }
 }
 
+.header-navbar.navbar-fixed {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  width: 100%;
+  background-color: $desClrDark;
+  .navbar-nav {
+    justify-content: space-around;
+    & > li{
+      padding: 3rem 0;
+    }
+  }
+}
+
+//Hero + slider
+
 .hero {
-  background:
-          linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-          url('../img/hero-bg-alt.jpg') no-repeat bottom/cover;
   height: 700px;
+  position: relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: red;
 }
 
