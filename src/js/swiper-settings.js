@@ -5,15 +5,13 @@ export const carouselSettings = {
     speed: 1200,
     slidesPerView: 1,
     effect: 'fade',
-    // If we need pagination
     pagination: {
         el: '.swiper-pagination',
+        clickable: true,
         dynamicBullets: true,
     },
-
-    // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
+        nextEl: '.hero-swiper-button-next',
+        prevEl: '.hero-swiper-button-prev',
+    },
 };

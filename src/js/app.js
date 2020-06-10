@@ -25,14 +25,14 @@ const navBar = document.getElementById(`navbar`);
 const header = document.getElementById(`header`);
 
 window.addEventListener(`scroll`, function () {
-    if(window.pageYOffset > header.offsetTop) {
+    if(window.pageYOffset >= 200) {
         navBar.classList.add(`navbar-fixed`);
     } else {
         navBar.classList.remove(`navbar-fixed`);
     }
-    if(window.pageYOffset > (header.offsetTop + 10)) {
-        navBar.classList.add(`animated`);
-    } else {
-        navBar.classList.remove(`animated`);
-    }
+    // if(window.pageYOffset > (header.offsetTop + 10)) {
+    //     navBar.classList.add(`animated`);
+    // } else {
+    //     navBar.classList.remove(`animated`);
+    // }
 });
