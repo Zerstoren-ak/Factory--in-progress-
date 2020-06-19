@@ -124,6 +124,7 @@ i {
 
 .header-navbar {
   transition: all .7s;
+  top: -50px;
   .container {
     display: flex;
     justify-content: space-between;
@@ -205,8 +206,8 @@ i {
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  transform: translateY(0);
   justify-content: center;
   width: 100%;
   background-color: $desClrDark;

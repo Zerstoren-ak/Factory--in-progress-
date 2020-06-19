@@ -3,6 +3,7 @@ import 'swiper/css/swiper.css';
 import {carouselSettings} from './swiper-settings';
 import '@/css/styles.scss';
 import logo from '@/img/logo.png';
+// import * as image from '@/img/';
 
 
 //// Swiper set & initialization + import all test (* as)
@@ -22,7 +23,7 @@ import logo from '@/img/logo.png';
 const swiper = new Swiper('.swiper-hero', carouselSettings);
 
 const navBar = document.getElementById(`navbar`);
-const header = document.getElementById(`header`);
+// const header = document.getElementById(`header`);
 
 window.addEventListener(`scroll`, function () {
     if(window.pageYOffset >= 200) {
